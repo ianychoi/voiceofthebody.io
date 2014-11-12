@@ -1,0 +1,54 @@
+---
+title: Voice of the Body
+nav:
+  - 'simband'
+  - 'sensor-module'
+  - 'community'
+  - 'bioinformatics'
+---
+
+
+%header.alpha.welcome
+  %h1 Welcome to our public beta.
+  %p This is our playground where we share the latest innovations and changes to our developer platforms. We are making changes daily, so please share your feedback and especially pull requests on GitHub. Have a question or suggestion? Click on the Feedback or Edit buttons and join our community.
+
+%section.welcome-top.welcome-section
+  %ul
+    %li
+      %a.landing-block{href: "/simband"}
+        .section-image
+          %img{src: "/images/landing/simband.png"}
+        %h2 Simband
+        %p Write algorithms running natively on Simband with real-time data coming from the sensor module
+        %span.learn-more Read More
+    %li
+      %a.landing-block{href: "http://developer.samsungsami.io/"}
+        .section-image
+          %img{src: "/images/landing/sami.png"}
+        %h2 SAMI
+        %p SAMI is a data exchange platform enabling sensors, applications and services to communicate with a standard API
+        %span.learn-more Read More
+    %li
+      %a.landing-block{href: "/sensor-module"}
+        .section-image
+          %img{src: "/images/landing/sensor.png"}
+        %h2 Sensor Module
+        %p Integrate, customize or improve the hardware components and algorithms running on our reference implementation module
+        %span.learn-more Read More
+
+
+%section.welcome-bottom.welcome-section
+  %ul
+    %li
+      %a.landing-block{href: "/community"}
+        %h2 Community
+        %p Share your experiences, connect with other developers and engage in the conversation.
+        %span.learn-more Read More
+    %li
+      %a.landing-block{href: "/bioinformatics"}
+        %h2 Bioinformatics
+        %p This is a living information repository for Simband, presented here as a starting point for developers and researchers. Browse our findings and pull them together any way you’d like.
+        %span.learn-more Read More
+
+%footer.footer
+  = partial :footer
