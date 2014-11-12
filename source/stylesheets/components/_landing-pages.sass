@@ -61,6 +61,7 @@
       background: #0057B8
       color: #fff
       padding: 28px
+      min-height: 200px
       h2
         margin: 0 0 12px 0
       p
@@ -158,6 +159,22 @@ body.sensor-module_index .content
         background-color: #685BC7
       +respond-to('tablet')
         +background(linear-gradient(to right, rgba(255,255,255, 0.9) 60%, rgba(255,255,255,0)))
+  .landing-subheader
+    background-color: #00A9E0
+    +respond-to('tablet')
+      padding-left: 40.0%
+      background: #00A9E0 url('/images/landing/simband_venn@2x.png') no-repeat 10% 35px
+      background-size: 236px auto
+      p
+        width: 80%
+    +respond-to('desktop')
+      padding-left: 45.5%
+      background-position: 22% 35px
+      p
+        width: 66%
+    +respond-to('1100px')
+      padding-left: 42.5%
+      background-position: 24% 35px
 
 body.simband_index .content
   .landing-header .mask, .landing-subheader
@@ -176,7 +193,6 @@ body.simband_index .content
       +respond-to('tablet')
         +background(linear-gradient(to right, rgba(255,255,255,0), #ffffff))
   .landing-subheader
-    min-height: 200px
     +respond-to('tablet')
       background: #0057B8 url('/images/landing/sami.png') no-repeat 22% 35px
       background-size: 120px
