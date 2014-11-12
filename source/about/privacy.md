@@ -52,7 +52,7 @@ Samsung Electronics Co., Ltd.
 Menlo Park, CA 94025
 
 
-##Samsung Simband/Samiio Platform Privacy Policy
+##Samsung Simband/SAMIIO Platform Privacy Policy
 
 Samsung Electronics Co., Ltd. and its affiliates (“Samsung,” “we,” “us,” “our”) know how important privacy is to our customers, and we strive to be clear about how we collect, use, disclose, transfer and store your information.  This privacy policy (the “Privacy Policy”) provides an overview of our information practices.  The Privacy Policy applies to (i) the Samsung Simband/SAMIIO Platform, a platform operated by Samsung that will enable mobile devices like those based on Simband to upload information, (ii) the following SAMIIO websites:  portal.samsungsami.io (the “User Portal”), devportal.samsungsami.io (the “Developer Portal”), trial-admin.samsungsami.io (the “Trial Tool Administrator Site”) and trial.samsungsami.io (the “Trial Tool Participant Site”), go.simband.io, and (iii) any Samsung device, website or online application that links to this Privacy Policy (collectively, the “Platform”).
 
