@@ -2,17 +2,20 @@ body.index
 
   .alpha.welcome
     +source-sans
-    background: url('/images/landing/home_bg.png') no-repeat left center
-    background-size: cover
-    +respond-to('600px')
+    padding: 15px
+    +respond-to('tablet')
+      padding: 30px 55px
+      background: url('/images/landing/home_bg.png') no-repeat left center
       background-position: left 20%
       background-size: 100%
-    padding: 30px 55px
+      h1
+        font-weight: 600
     h1
       font-size: 24px
       color: #00A9E0
       font-weight: bold
       margin-bottom: 8px
+      font-weight: normal
     p
       margin: 0
 
@@ -39,7 +42,8 @@ body.index
       +respond-to('tablet')
         font-size: 50px
     p
-      max-width: 75%
+      +respond-to('tablet')
+        max-width: 75%
       margin: 0 auto 12px auto
       line-height: 1.6em
       font-size: 16px
