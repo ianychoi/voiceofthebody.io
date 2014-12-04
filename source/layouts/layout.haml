@@ -76,8 +76,15 @@
                       Feedback
                   %li
                     = github_link '<i class="fa fa-github"></i> Edit', current_page
+                  %li
+                    %a#mailing-list{href: '#'}
+                      %i.img.mailing-list-small
+                      Join mailing list
               %li.section-nav-footer
                 = partial :footer
+        .lightbox-content
+          = partial :mailing_list
+
         #swiftype-results
         %div.main.content{ data: {view: 'Content'}}
           .main-content-interior
