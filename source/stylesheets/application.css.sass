@@ -14,7 +14,7 @@
 @import 'components/home'
 @import 'components/landing-pages'
 @import 'components/form'
-
+@import 'components/mailing-list'
 
 %inline-list
   display: inline-block
@@ -32,7 +32,6 @@
   +transition-property(padding-left)
   +transition-duration
   +transition-timing-function
-  $toc-width: 258px
   background-color: #f8f9fa
   height: 100%
   overflow: hidden
@@ -45,10 +44,6 @@
     padding-left: $sidebar-width
   +landing-page
     padding-left: 0
-  &.main
-    .with-toc &
-      +respond-to('desktop')
-        padding-right: $toc-width + 52px
 
   .table-of-contents
     -webkit-overflow-scrolling: touch
@@ -206,6 +201,8 @@
   font-size: 14px
   a
     display: block
+    position: relative
+    word-break: normal
   &:first-child:last-child
     max-width: 100%
 
@@ -226,6 +223,11 @@
     position: relative
     margin: 0 auto
     overflow: hidden
+    padding-bottom: 175px
+    +respond-to(tablet)
+      padding-bottom: 300px
+    +respond-to(desktop)
+      padding-bottom: 400px
     +respond-to('1200px')
       max-width: 620px
 
@@ -243,6 +245,8 @@
     padding: 0
   +respond-to('tablet')
     padding: 39px 50px 50px 52px
+  +respond-to('desktop')
+    padding-right: $toc-width + 52px
   #st-content-cache + &
     display: none
   a
@@ -257,11 +261,27 @@
       @extend %paging-link
     .prev-page
       float: left
+      a
+        padding-left: 15px
       a:before
         content: '\00ab '
+        display: block
+        width: 15px
+        left: 0
+        top: 0
+        position: absolute
+        height: 100%
     .next-page
       float: right
       text-align: right
+      a
+        padding-right: 15px
       a:after
         content: ' \00bb'
+        display: block
+        width: 15px
+        right: 0
+        top: 0
+        position: absolute
+        height: 100%
 

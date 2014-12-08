@@ -24,8 +24,11 @@ $ ->
     headerHeight = $header.outerHeight()
     minHeight = windowHeight+1
 
-    $('.main.content, #swiftype-results').css minHeight: minHeight  - headerHeight
-    $('.section-nav').css minHeight: windowHeight - headerHeight, maxHeight: windowHeight - headerHeight
+    $('.main.content, #swiftype-results').css minHeight: minHeight - headerHeight
+
+  clearClasses = ()->
+    $body.removeClass('menu-expanded')
+    $('.content').removeClass('sidebar-open')
 
   lastPosition = -1
 
@@ -49,6 +52,7 @@ $ ->
       el: el
 
   $(window).on 'resize', _.debounce setMinHeight, 200
+  $(window).on 'resize', _.debounce clearClasses, 200
 
   $('.toggle-menu').on 'click', (e)-> e.preventDefault(); $(this).parent('.content').toggleClass('sidebar-open')
   $('.main-header .toggle-nav').on 'click', (e)->
@@ -94,10 +98,19 @@ $ ->
     classes = $(this).attr('class')
     $(this).parent().addClass classes
 
+  # Set up param specific tables
+  $('table .param').each ()->
+    $(this).parent().siblings().addClass('param-companion')
+
   # Lightbox behavior
   $.featherlight.defaults.closeOnClick = 'anywhere'
   $('table img, img.lightbox').each ()->
     $(this).on 'click', ()->
       $.featherlight($(this), {type: 'image'});
+
+  $('#mailing-list').each ()->
+    $(this).on 'click', (e)->
+      e.preventDefault()
+      $.featherlight($("#mailing-list-container"), {type: 'image', variant: 'mailing-list', closeOnClick: 'background'});
 
   UserVoice.push(['addTrigger', '#feedback', { mode: 'contact' }])
