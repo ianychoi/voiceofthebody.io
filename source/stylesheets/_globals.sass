@@ -46,16 +46,24 @@ h2
   font-size: 30px
   font-weight: 300
   line-height: 1.1em
-  margin-top: 1.5em
   margin-bottom: 0px
+  padding-top: 3em
+  margin-top: -1.5em
+  +respond-to(tablet)
+    padding-top: 1.5em
+    margin-top: 0
 
 h3
   +source-sans
   font-size: 24px
   font-weight: 400
   line-height: 1.2em
-  margin-top: 1.5em
   margin-bottom: 0.6em
+  padding-top: 3em
+  margin-top: -1.5em
+  +respond-to(tablet)
+    padding-top: 1.5em
+    margin-top: 0
 
 table
   +source-sans
@@ -111,7 +119,7 @@ img.lightbox, td img
     @extend .fa-info-circle
 
 a
-  &, &:active, &:visited, &:hover
+  &, &:active, &:visited
     color: #00A9E0
     text-decoration: none
 
@@ -125,19 +133,23 @@ hr.typography
   font-family: 'MetaSerifWeb-Book'
   h2:target
     color: #323F4A
-  a:hover
-    border-bottom: 1px dotted
+
   h1, h2, h3, h4, h5, h6,
   p, ul, ol, blockquote,
   dl, img, hr
     max-width: 620px
     +landing-page
       max-width: none
-  p img
-    overflow-x: auto
+  p img 
+    width: 100%
+    max-width: 100%
   h2 + h3, h4 + h5
-    margin-top: 0.75em
+    padding-top: 3em
+    margin-top: -2.25em
     margin-bottom: 0.75em
+    +respond-to(tablet)
+      padding-top: 0.75em
+      margin-top: 0
   h3 + h4
     margin-top: -0.75em
     margin-bottom: 0.75em
@@ -348,7 +360,7 @@ a.learn-more
   text-transform: uppercase
   &:after
     content: ' \00bb'
-a.button
+a.button, .main a.button
   color: #fff
   text-decoration: none
   &:hover
