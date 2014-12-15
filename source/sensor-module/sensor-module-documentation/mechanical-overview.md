@@ -60,6 +60,7 @@ The Simsense bucket is built into the wristband. It contains two cantilevel spri
 Simsense connects to Simband via two 6-pin low-profile cantilevel spring style connectors that contain the power, data, sensor signal and reserved pins. On the Simsense side there are 12 individual contact pads, aligned to make contact when the Simsense is placed in the Simsense bucket. 
 
 The Simsense bucket connector is shown below.
+
 <div  class="photo-grid" style="max-width: 512px;">
  ![](/images/docs/sensor-module/sensor-module-documentation/mechanical-overview/simsense-bucket-connector.png)
 </div>

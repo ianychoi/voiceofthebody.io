@@ -191,6 +191,7 @@ A calculated frame checksum that covers all bytes in the packet starting with th
 
 ## Fields order in the packet
 The order of the fields in the packet was chosen such that the parsing software can make a quick determination as to the validity and the destination of the packet. The following flow chart shows the parsing path of a packet once it arrives into the destination CPU:
+
 <div  class="photo-grid" style="max-width: 512px;">
  ![](/images/docs/sensor-module/sensor-module-documentation/sensor-module-communication-protocol/Protocol_parsing_order.png)
 **Protocol parsing order**
