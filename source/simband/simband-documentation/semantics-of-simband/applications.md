@@ -33,8 +33,10 @@ The spot check is a wizard-style application that guides the user to make sure t
 ## Dashboard
 The myTrends screen takes selected streams from Simband and displays them in a chart over a day. This is the first instance of data visualization that is geared more toward users than developers.
 
-![](/images/docs/simband/simband-documentation/semantics-of-simband/applications/dashboard.png)
+<div  class="photo-grid" style="max-width: 512px;">
+ ![](/images/docs/simband/simband-documentation/semantics-of-simband/applications/dashboard.png)
 **Dashboard application**
+</div>
 
 ## Simband Settings
 While Simband comes with the usual device settings such as WiFi, display and power, the Simband settings enable calibrating the actual guts of Simband.

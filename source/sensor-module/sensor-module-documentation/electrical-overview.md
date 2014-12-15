@@ -7,9 +7,10 @@ title: "Electrical overview"
 In [Mechanical overview](/sensor-module/sensor-module-documentation/mechanical-overview.html), we mentioned that the Simsense bucket connector provides an electrical connection between the Simsense and Base Unit. This article covers the electrical constraints to keep in mind when designing a sensor module.
 
 Below is the schematic snippet for the connector connecting Simsense and Base Unit with the table containing associated pin functions.
-
-![](/images/docs/sensor-module/sensor-module-documentation/electrical-overview/simsense-connector-electrical.png)
+<div  class="photo-grid" style="max-width: 512px;">
+ ![](/images/docs/sensor-module/sensor-module-documentation/electrical-overview/simsense-connector-electrical.png)
 **Connector schematic snippet** 
+</div>
 
 | Pin#      |Associated Function       | Net name|
 |-----------|--------------------------|---------| 
