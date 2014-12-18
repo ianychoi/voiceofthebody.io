@@ -16,7 +16,7 @@ We are actively adding de-indentified vital sign data to this repository. In the
 As we collect more data we will make it available in this repository. Every time we set ourselves to collect data we define a data collection "protocol". Protocols are available with each data collection so that you can cross reference and understand what we collected and how. When we collect data according to a give protocol we call it a "study". Each study focuses on a different physical or mental activity, and uses a particular combination of sensors. Below you can find a list of our studies so far.
 
 ##Conducted Studies
-  [**Blood Pressure Study**](https://github.com/votb/Bioinformatics/wiki/Blood-Pressure-Study)
+  <a href="https://github.com/votb/Bioinformatics/wiki/Blood-Pressure-Study" target="_blank">**Blood Pressure Study** </a>
 
 The information contained here is composed of real signals, but contains no personally identifiable information. All data has been collected in compliance with the IRB.
 {: .info}
