@@ -102,13 +102,16 @@
       +transition-timing-function
       color: #fff
       background: #1caade
+      +landing-bg-colors
       +respond-to('tablet')
         background: transparent
         .sidebar-open &
           background: #1caade
+          +landing-bg-colors
       +respond-to('desktop')
         color: #fff
         background: #1caade
+        +landing-bg-colors
   #feedback-side
     display: inline-block
   .section-title
