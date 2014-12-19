@@ -7,7 +7,7 @@ nav:
 
 Welcome to project "Bioinformatics".
 
-This is a repository of vital signs data we are building with Simband . We don't assume that all Simband and SAMI developers will have ready access to living information—with that thought in mind, we created project "Bioinformatics".
+This is a data repository of vital signs we are building with Simband. We don't assume that all Simband and SAMI developers will have ready access to living information—with that thought in mind, we created project "Bioinformatics".
 
 On these pages, you will find actual data from a variety of participants, which we encourage you to download and experiment with. Data are available via direct download. We are excited to share the data we collected so far and we look forward to hear your feedback. We are seeking feedback on how we collected data and how we could do a better job at it. We would also like to hear how you plan to use this data and how this can be helpful in your research. We are especially excited to see innovative if not revolutionary ways to analyze the data shared here to gather more insights about the human body. Surprise us with amazing projects and help people collect better information about themselves.
 
