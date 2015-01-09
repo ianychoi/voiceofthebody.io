@@ -134,6 +134,9 @@ hr.typography
   h2:target
     color: #323F4A
 
+  h1:first-child
+    padding-top: $content-top-padding
+    margin-top: -$content-top-padding
   h1, h2, h3, h4, h5, h6,
   p, ul, ol, blockquote,
   dl, img, hr
@@ -179,7 +182,7 @@ hr.typography
       font-style: normal
       line-height: 1
       padding: 6px
-  
+
   div.three-col + p strong, div.photo-grid + p strong
     font-family: Source Sans Pro
     color: #949AA2
@@ -187,6 +190,7 @@ hr.typography
     float: left
     width: 100%
     clear: both
+
   img.right + strong
     float: right
     text-align: right
@@ -228,6 +232,16 @@ hr.typography
       padding: calc(0.8em + 5px) 10px
     img
       max-width: 425px
+
+  .param
+    +border-radius(3px)
+    background-color: #e2f4fa
+    color: #009CA6
+    display: inline-block
+    font-family: inherit
+    font-style: normal
+    line-height: 1
+    padding: 6px
 
   ol, ul
     padding-left: 2.2em
