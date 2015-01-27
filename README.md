@@ -1,6 +1,6 @@
 <a href="http://www.voiceofthebody.io"><img src="https://github.com/votb/voiceofthebody.io/blob/master/source/images/landing/VOTB.png" title="Voice of the Body" />
 
-## Hola! 
+## ¡Hola! 
 
 Welcome to [voiceofthebody.io][1], in public beta form.
 
