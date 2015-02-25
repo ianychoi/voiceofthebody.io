@@ -10,7 +10,7 @@ class App.Views.Content extends Backbone.View
 
   createTableOfContents: ()->
     headers =  @$el.children('.main-content-interior').children('h2, h3')
-    showNavItems = headers.not('h3').length > 2 and @$el.attr('data-no-toc') is undefined
+    showNavItems = headers.length > 0 and @$el.attr('data-no-toc') is undefined
     $title =  @$el.children('.main-content-interior').children('h1:first-child').first()
     if @$el.siblings('.section-nav').length > 0
       $toc = new App.Views.TableOfContents
@@ -34,8 +34,25 @@ class App.Views.Content extends Backbone.View
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>'))
 
+  parseAPIparams: ->
+    codeBlocks = @$el.children('.main-content-interior').find('.param.http')
+    codeBlocks.each (i, el)=>
+      $code = $(el)
+      exploded = $code.text().split(' ')
+      $code.html @renderAPIBlock exploded...
+      $code.addClass exploded[0].toLowerCase()
+
+  renderAPIBlock: (method, description..., url)->
+    ich.apiParam {
+      method: method
+      description: description.join(' ')
+      url: url
+      type: method.toLowerCase()
+    }
+
   render: ()->
     @groupImages()
     @createTableOfContents()
     @parseTables()
+    @parseAPIparams()
     return @
