@@ -10,7 +10,7 @@ nav:
 
 # Documentation
 
-Simband is our concept of what a smart health device should be. 
+Simband is our concept of what a digital health device should be. 
 
 An open developer platform, Simband consists of a watch unit running [Tizen][1] and a wristband connector that holds a custom sensor module.
 
