@@ -3,6 +3,7 @@ title: "Documentation"
 nav:
   - 'simband-sami'
   - 'semantics-of-simband'
+  - 'applications'
   - 'writing-algorithms-using-simband-api'
   - 'simband-api'
   - 'simband-source-code'
