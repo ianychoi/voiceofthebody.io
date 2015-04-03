@@ -1,5 +1,5 @@
 ---
-title: "Applications"
+title: "Simband Applications"
 cors: true
 ---
 
