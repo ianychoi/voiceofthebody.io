@@ -15,3 +15,4 @@ gem 'nokogiri'
 gem 'middleman-dotenv'
 gem "builder"
 gem 'puma'
+gem 'rack-cors', :require => 'rack/cors'
