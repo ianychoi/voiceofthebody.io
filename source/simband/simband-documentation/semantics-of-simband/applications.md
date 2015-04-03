@@ -1,5 +1,6 @@
 ---
 title: "Applications"
+cors: true
 ---
 
 # Applications
