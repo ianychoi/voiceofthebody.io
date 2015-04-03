@@ -65,10 +65,17 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-set :site_domain, 'http://voiceofthebody.io/'
+configure :development do
+  set :site_domain, 'http://0.0.0.0:4567/'
+  activate :votb_publisher do |publisher|
+    publisher.dir = 'votb_publisher'
+    publisher.site_domain = config[:site_domain]
+  end
+end
 
 # Build-specific configuration
 configure :build do
+  set :site_domain, 'http://voiceofthebody.io/'
   sitemap.rebuild_resource_list!
   # For example, change the Compass output style for deployment
   activate :minify_css
@@ -89,6 +96,12 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+
+  activate :votb_publisher do |publisher|
+    publisher.dir = 'votb_publisher'
+    publisher.site_domain = config[:site_domain]
+    publisher.relative_assets = true
+  end
 end
 
 # # Configuration of the swiftype extension

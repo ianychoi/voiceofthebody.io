@@ -6,6 +6,12 @@ GIT
       middleman-core (>= 3.0)
       swiftype (>= 0.0.4)
 
+PATH
+  remote: ./middleman-votb_publisher
+  specs:
+    middleman-votb_publisher (0.0.1)
+      middleman-core (>= 3.3.6)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -164,6 +170,7 @@ DEPENDENCIES
   middleman-livereload
   middleman-swiftype (~> 0.0.2)!
   middleman-syntax
+  middleman-votb_publisher!
   nokogiri
   puma
   rack-cors

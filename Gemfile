@@ -16,3 +16,4 @@ gem 'middleman-dotenv'
 gem "builder"
 gem 'puma'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'middleman-votb_publisher', :path => './middleman-votb_publisher'
