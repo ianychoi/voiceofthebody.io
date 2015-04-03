@@ -52,12 +52,4 @@ The following settings are available:
 1. **Simband mode:** Switch between real and simulated modes. In the future this will also allow replay mode.
 1. **Algorithm calibration:** Allows the user to input personal data that can be used by algorithms such as blood-pressure.
 
-## Data Collection Tool
-Simband exposes a web interface called the Data Collection Tool. It is available via `http://[simband-IP-address]:2263/collect.html`.
 
-In this tool, a researcher can collect data from all the streams available in Simband, and save them in the following formats:
-
-- Can format, a recording of the data that allows you to later replay it in a loop.
-- CSV format, a 2D table of time/stream that can be used for analysis with tools like Matlab.
-
-Data can be accessed when the sensors are active.
