@@ -1,3 +1,5 @@
+require 'rack/cors'
+
 # Modified version of TryStatic, from rack-contrib
 # https://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/try_static.rb
 
