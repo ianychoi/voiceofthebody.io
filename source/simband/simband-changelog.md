@@ -8,11 +8,12 @@ title: Changelog
 Here we'll be posting regular updates about Simband and updates to the documentation.
 
 ## April 14, 2015
-List of new things:
+After a few months of silence, we are finally posting some updates that will show you our progress and improvements:
 
- - [Simband applications](/simband/simband-documentation/applications/) page updated with more granular information.
+ - [Simband applications](/simband/simband-documentation/applications/) page updated with more granular information and updated screenshots.
  - Simband [settings](/simband/simband-documentation/applications/settings.html) page updated.
  - Simband [FAQ](/simband/faq.html) updated.
+ - [Simband operation modes](/simband/simband-documentation/operation-modes.html) updated.
 
 ## November 12, 2014
 
