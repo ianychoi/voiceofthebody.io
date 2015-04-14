@@ -8,7 +8,7 @@ title: Changelog
 Here we'll be posting regular updates about Simband and updates to the documentation.
 
 ## April 14, 2015
-List of new things:
+This is something a lot of our partners have asked, so here is more information about our PPG:
 
  - [PPG wavelength](/sensor-module/sensor-module-documentation/simsense.html#ppg) and channel information updated
 
