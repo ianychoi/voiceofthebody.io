@@ -51,18 +51,11 @@ Algorithms running on Simband elaborate the data, store the results locally and 
 Streams are immutable—i.e., algorithms **cannot** modify a stream of data linked to a sensor. When an algorithm wants to store data to be used later, it will effectively create a new stream of data fed by the algorithm itself. 
 
 The power of this implementation is that each algorithm is the "owner if its fate," and can alter it at any time in the way it wants. Other algorithms, meanwhile, can also "dip" into that stream and benefit from the computations that happen in Simband without repeating the same work.
-
-## Simband operation modes
-
-### Monitoring Mode
-Monitoring mode is activated when the display is on, and one of the Simband applications is running. During this time, all sensors on Simsense are running and collecting data. Algorithms run regularly on the watch base. Simsense sends all data it gets from the sensors as a 128 Hz wave, without any analysis. The only algorithm that needs to regularly run on Simsense during monitoring mode is the sample-rate converter, which normalizes the different streams to the same clock and to a 128 Hz sampling rate.
-
-### Collection Mode
-Though monitoring mode gives us full flexibility, it consumes a lot of power, as it requires all the sensors and also the main A7 processor to be on. This is not feasible in a system that works 24 hours. Collection mode is activated when the screen is off and no Simband application is running. During this time, Simsense collects data and reduces it to heartbeats (with an attached confidence indication). Once every 20 to 60 minutes, based on power considerations, Simband will wake up, flush that data from Simsense, and make it available on Simband. 
+ 
 
 [1]: /simband/simband-documentation/semantics-of-simband/applications.html#spotcheck "Spotcheck"
 [2]: /sensor-module/sensor-module-documentation/sensor-module-communication-protocol/ "Sensor module communication protocol"
-[3]: /simband/simband-documentation/semantics-of-simband/#simband-operation-modes "Simband operation modes"
+[3]: /simband/simband-documentation/operation-modes.html "Simband operation modes"
 [4]: /simband/simband-documentation/semantics-of-simband/types-streams.html "Types of streams"
 [5]: /sensor-module/sensor-module-documentation/simsense.html "Simsense"
 [6]: /simband/simband-documentation/simband-api.html "Simband API"

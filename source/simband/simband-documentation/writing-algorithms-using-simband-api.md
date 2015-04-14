@@ -145,7 +145,7 @@ To receive periodic callbacks, we will use a timer. To do that, let's create an 
 
 The [`simband::timer`{:.param}][11] constructor expects a pointer to an object of class [`simband::io_context`{:.param}][9] as a parameter and a callback with no parameters. We will create an object of [`simband::timer`{:.param}][11] and store it in the `unique_ptr m_timer`{:.param} declared in `hrvalgorithm.h`.
 
-In this example, as a callback we use C++11 [lambda][7].
+In this example, as a callback we use C++11 [lambda][6].
 
 ~~~c
 #include "hrvalgorithm.h"
@@ -206,7 +206,7 @@ HRVAlgorithm::HRVAlgorithm()
 }
 ~~~
 
-When we get the callback, all the code inside the [lambda][7] function will execute.
+When we get the callback, all the code inside the [lambda][6] function will execute.
 
 Since we now have the data available in the `hb`{:.param} stream, we should use the API [`simband_io_get_timestamps()`{:.param}][13] to get the timestamps of where-there-is-a-heartbeat and send this data to calculate `HeartRateVariability`.
 

@@ -67,7 +67,7 @@ The following characteristics may classify a stream:
 
 
 
-[1]: /simband/simband-documentation/semantics-of-simband/applications.html#spot-check "What is a spot check?"
+[1]: /simband/simband-documentation/applications/#spot-check "What is a spot check?"
 [2]: /sensor-module/sensor-module-documentation/simsense.html "Simsense"
 [3]: /sensor-module/sensor-module-documentation/simsense.html#ppg "What is PPG?"
 [4]: /sensor-module/sensor-module-documentation/simsense.html#ecg "What is ECG?"

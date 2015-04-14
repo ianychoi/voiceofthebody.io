@@ -57,6 +57,20 @@ For heartrate measurement, the bio-impedance sensor aims to measure the pulse wa
 
 The Photoplethysmogram (PPG) sensor measures blood-volume changes in the blood tissue. PPG is a plethysogram obtained using optics. A plethysmogram is volumetric measurement of an organ. In Simsense we use PPG to detect blood-volume change at microvascular level. This technique is non-invasive and it is obtained by illuminating light into the body and measuring the change in light absorption.
 
+Simsense has multichannel PPG with multiple wavelengths. Table below covers PPG channels and their corresponding wavelength(as per LED data sheet):
+
+|**Channel name**|**LED color**|**Wavelength(nm)**|
+|----------------|-------------|------------------|
+|0/A               |Blue         |460-470           |
+|1/B               |Green        |520-535           |
+|2/C               |Red          |644-676           |
+|3/D               |IR           |850-970           |
+|4/E               |Green        |520-535           |
+|5/F               |Green        |520-535           |
+|6/G               |Yellow       |585-594           |
+|7/H               |Green        |520-535           |
+
+
 | **Parameter**| **Options**| **Value**|**Units**| **Notes**|
 |--------------|------------|----------|---------|----------|
 |Resistor for TIA gain setting| 50/100/200| 50   | KOhm(Ω)  |  |

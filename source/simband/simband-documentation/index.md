@@ -4,6 +4,7 @@ nav:
   - 'simband-sami'
   - 'semantics-of-simband'
   - 'applications'
+  - 'operation-modes'
   - 'writing-algorithms-using-simband-api'
   - 'simband-api'
   - 'simband-source-code'
