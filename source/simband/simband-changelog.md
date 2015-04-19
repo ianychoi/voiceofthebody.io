@@ -7,6 +7,9 @@ title: Changelog
 
 Here we'll be posting regular updates about Simband and updates to the documentation.
 
+## April 19, 2015
+Added list of streams available in Simband.
+
 ## April 14, 2015
 After a few months of silence, we are finally posting some updates that will show you our progress and improvements:
 
