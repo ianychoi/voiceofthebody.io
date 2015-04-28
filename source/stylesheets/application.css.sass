@@ -201,6 +201,9 @@
   -webkit-overflow-scrolling: touch
   overflow: auto
   width: 100%
+  [data-flex-width] &
+    width: auto
+    overflow: visible
   table td
     vertical-align: top
 
@@ -260,6 +263,15 @@
     padding: $content-top-padding 50px 50px 52px
   +respond-to('desktop')
     padding-right: $toc-width + 52px
+  &[data-no-toc]
+    padding-right: 50px
+  &[data-flex-width]
+    padding-right: 50px
+    padding-bottom: 0
+    .main-content-interior
+      max-width: none
+      overflow-x: scroll
+
   #st-content-cache + &
     display: none
   a

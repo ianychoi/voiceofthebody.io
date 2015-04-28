@@ -95,7 +95,7 @@
                 = partial :footer
 
         #swiftype-results
-        %div.main.content{ data: {view: 'Content', 'no-toc' => page_data(current_page)['no_toc']}}
+        %div.main.content{ data: {view: 'Content', 'no-toc' => page_data(current_page)['no_toc'], 'flex-width' => page_data(current_page)['flex_width']}}
           .main-content-interior
             ~ yield
             - if current_page.parent

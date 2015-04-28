@@ -9,6 +9,7 @@ class App.Views.Content extends Backbone.View
         $(el).addClass('img-gallery')
 
   createTableOfContents: ()->
+    return if @$el.attr('data-no-toc') isnt undefined
     headers =  @$el.children('.main-content-interior').children('h2, h3')
     showNavItems = headers.length > 0 and @$el.attr('data-no-toc') is undefined
     $title =  @$el.children('.main-content-interior').children('h1:first-child').first()
@@ -27,6 +28,7 @@ class App.Views.Content extends Backbone.View
         $(target).addClass('active')
 
   parseTables: ->
+    return if @$el.attr('data-flex-width') isnt undefined
     tables = @$el.children('.main-content-interior').children('table')
     tables.wrap('<div class="table-wrapper"></div>')
     tables.find('td').each (i, el)->

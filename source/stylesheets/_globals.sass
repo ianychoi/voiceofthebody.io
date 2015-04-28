@@ -132,6 +132,12 @@ hr.typography
   border-bottom: 1px solid #E1E4E6
   display: inline-block
 
+= content-tags
+  h1, h2, h3, h4, h5, h6,
+  p, ul, ol, blockquote,
+  dl, img, hr
+    @content
+
 .content
   font-family: 'MetaSerifWeb-Book'
   h2:target
@@ -140,11 +146,12 @@ hr.typography
   h1:first-child
     padding-top: $content-top-padding
     margin-top: -$content-top-padding
-  h1, h2, h3, h4, h5, h6,
-  p, ul, ol, blockquote,
-  dl, img, hr
+  +content-tags
     max-width: 620px
     +landing-page
+      max-width: none
+  &[data-flex-width]
+    +content-tags
       max-width: none
   p img, img
     width: 100%
