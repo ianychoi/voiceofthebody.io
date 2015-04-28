@@ -13,16 +13,7 @@ There are various streams available in Simband. For ease of readability and appl
 1. [System streams](#system-streams)
 1. [Partner streams](#partner-streams)
 1. [Debug streams](#debug-streams)
-
-## Legends
-
-| Term       | Description                                                                                                  |
-|------------|--------------------------------------------------------------------------------------------------------------|
-| Typical    | Smoothed over a fixed time interval for use in myTrends.                                                     |
-| Raw        | Signal before sample rate conversion.                                                                        |
-| Info       | Additional metrics used for contour analysis.                                                                |
-| Confidence | An enum stream representing signal confidence.                                                               |
-| Visual     | Visual signal, processed through a smoothing filter used for display purpose only. For eg. Band-pass filter. |
+1. [Legend](#legend)
 
 ## Sensor streams
 This category defines streams related and originating from [Simsense](/sensor-module/sensor-module-documentation/simsense.html).
@@ -155,4 +146,14 @@ This category defines streams related to partners algorithms.
 | bloodPressureDiastolicConfidence | An enum stream representing confidence of bloodPressureDiastolic stream.                                     | 0=undefined, 1=poor, 2=low, 3=medium, 4=high | 65535       | com.samsung.simband.bloodPressure.diastolic/confidence |
 | bloodPressureSystolic            | Blood pressure Systolic in mmHg.                                                                             |                                              | 65535       | com.samsung.simband.bloodPressure.systolic             |
 | bloodPressureSystolicConfidence  | An enum stream representing confidence of bloodPressureSystolic.                                             | 0=undefined, 1=poor, 2=low, 3=medium, 4=high | 65535       | com.samsung.simband.bloodPressure.systolic/confidence  |
+
+## Legend
+
+| Term       | Description                                                                                                  |
+|------------|--------------------------------------------------------------------------------------------------------------|
+| Typical    | Smoothed over a fixed time interval for use in myTrends.                                                     |
+| Raw        | Signal before sample rate conversion.                                                                        |
+| Info       | Additional metrics used for contour analysis.                                                                |
+| Confidence | An enum stream representing signal confidence.                                                               |
+| Visual     | Visual signal, processed through a smoothing filter used for display purpose only. For eg. Band-pass filter. |
 
