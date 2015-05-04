@@ -32,6 +32,7 @@ What is the PPG LED drive current?
 
 What are the different blinking patterns of Simband charger?
 : Refer the diagram
+
 <div  class="photo-grid" style="max-width: 512px;">
  ![](/images/docs/simband/faq/batterycharging.png)
 </div>
