@@ -14,3 +14,16 @@ Though Monitoring mode gives us full flexibility, it consumes a lot of power, as
 
 ## Fitness mode
 Fitness mode is geared toward Fitness and activity. Simband will transition into Fitness mode whenever Simband detects any physical activity (e.g., walking or running) or when heart rate (HR) > 110 (configurable). This mode can be explicitly turned on by activating the [Fitness application](/simband/simband-documentation/applications.html#fitness). All Simband sensors are activated to collect data in this mode, just like in Monitor mode.
+
+
+# Simband miscellaneous
+
+## Simband battery
+
+Though Simband being a research platform, we have given importance to battery performance since day 1 and everyday. From 6 hours of battery life, we have moved that number till 30 and we are still to improve from here. While using monitoring mode where all the sensors, algorithms, screen, WiFi is running; at this time the power consumption is to the roof.
+
+Simband charger has a LED and different blinking is explained in the diagram below:
+
+<div  class="photo-grid" style="max-width: 512px;">
+ ![](/images/docs/simband/faq/batterycharging.png)
+</div>
