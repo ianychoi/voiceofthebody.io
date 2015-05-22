@@ -8,7 +8,7 @@ Although Simband is equipped with plenty of local memory, syncing with the cloud
 
 SAMI is an open, agnostic data exchange platform. With its [simple APIs][2], SAMI can collect and normalize data from any type of device or online source, and deliver it to any other device or application in real-time. 
 
-Simband uses SAMI to store data in the cloud for processing. Basic rule engines, machine learning and algorithms in SAMI help aggregate and perform analysis on the data. And once in SAMI, the data is available to partners who want to create approved apps and services. 
+Simband uses SAMI to store data in the cloud for processing. SAMI provides a basic rule engine (called Advanced Manifest) and a set of open APIs. Using SAMI's APIs developers can create their own algorithms to perform analysis on the data, machine learning and applications.
 
 SAMI defines a new paradigm for developers to create services and applications. It offers a new dimension to think beyond a single device, and enables developers to connect and analyze all sorts of data. This is what we call Data Driven Development (D<sup>3</sup>).
 
