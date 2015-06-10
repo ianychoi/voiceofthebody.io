@@ -1,5 +1,7 @@
 <a href="http://www.voiceofthebody.io" target="_blank"><img src="https://github.com/votb/voiceofthebody.io/blob/master/source/images/landing/VOTB.png" title="Voice of the Body" /></a>
 
+<img src="https://github.com/votb/voiceofthebody.io/blob/master/source/images/docs/simband/development-kits/simband-horizontal-side-view.png" title="Simband" />
+
 ## ¡Hola! 
 
 Welcome to [voiceofthebody.io][1], in public beta form.

@@ -31,7 +31,7 @@ What is the PPG LED drive current?
 : The Simsense PPG should be [calibrated](/simband/simband-documentation/applications/settings.html#sensor-calibration) for every user before capturing PPG data. PPG LED drive current for each PPG channel will be displayed after the calibration process is finished.
 
 What are the different blinking patterns of Simband charger?
-: Refer the diagram
+: Refer the diagram below:
 
 <div  class="photo-grid" style="max-width: 512px;">
  ![](/images/docs/simband/faq/batterycharging.png)
