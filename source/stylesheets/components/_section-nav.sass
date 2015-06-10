@@ -243,13 +243,24 @@ i.img.mailing-list-small
       font-weight: 300
 
 
-.bioinformatics.bioinformatics_index .side.content, .bioinformatics.bioinformatics_request .side.content, .community_index .side.content
-  .quick-search,
-  .section-nav-list
+.bioinformatics.bioinformatics_index .side.content,
+.bioinformatics.bioinformatics_request .side.content,
+.community_index .side.content
+  .quick-search
     display: none
+  .section-nav-list
+    & > li
+      display: none
+    .section-nav-footer
+      margin-left: 0
+      display: block
+      +respond-to('desktop')
+        margin-left: 106px
   &.sidebar-open
     +respond-to('tablet')
       padding-left: 470px
+      .section-nav-footer
+        margin-left: 106px
       .toggle-menu
         left: 455px
       .section-nav
