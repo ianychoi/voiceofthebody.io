@@ -49,7 +49,7 @@ On these pages, we provide the tools you need to create hardware and software on
 [6]: http://www.doxygen.org "Doxygen"
 [7]: /simband/simband-documentation/semantics-of-simband/#the-flow-of-data "Flow of data"
 [8]: /simband/simband-documentation/simband-api.html "Simband API"
-[9]: /simband/simband-documentation/semantics-of-simband/types-streams.html " Types of streams"
+[9]: /simband/simband-documentation/semantics-of-simband/types-streams/ " Types of streams"
 [10]: /simband/simband-documentation/semantics-of-simband/accessing-data-from-stream.html "Accessing data"
 [11]: /simband/simband-documentation/writing-algorithms-using-simband-api.html "Your first Simband algorithm"
 [12]: /simband/development-kits.html "Hardware development kit"

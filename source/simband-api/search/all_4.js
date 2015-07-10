@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['timer',['timer',['../classsimband_1_1timer.html',1,'simband']]],
-  ['timer',['timer',['../classsimband_1_1timer.html#a4e694f3479d4eb1e3da591071e018d9c',1,'simband::timer']]],
-  ['timestamp',['timestamp',['../structsimband__io__sample__s.html#a17708072bf6dd48c7bf86f113678a2fd',1,'simband_io_sample_s']]]
+  ['setgapresetthreshold',['setGapResetThreshold',['../classvobio_1_1clock.html#a689016679fde3a9faf6e9d230ef951ad',1,'vobio::clock']]],
+  ['simband_2dtypes_2eh',['simband-types.h',['../simband-types_8h.html',1,'']]],
+  ['stream',['stream',['../classvobio_1_1stream.html',1,'vobio']]]
 ];

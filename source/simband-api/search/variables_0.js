@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data',['data',['../structsimband__io__sample__s.html#a8465f61aed3c1e1f97457b7138f9110b',1,'simband_io_sample_s']]]
+  ['data',['data',['../structvobio__sample__s.html#a04f12638286ab97ba1b10901e3d5590d',1,'vobio_sample_s']]]
 ];

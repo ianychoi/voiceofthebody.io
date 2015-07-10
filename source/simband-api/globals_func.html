@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Simband Software: File Members</title>
+<title>Simband API: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Simband Software
+   <div id="projectname">Simband API
    </div>
-   <div id="projectbrief">API documentation for Simband, for connecting to sensors and algorithms.</div>
+   <div id="projectbrief">Simband API documentation, for accessing data from sensors and algorithms.</div>
   </td>
  </tr>
  </tbody>
@@ -71,12 +71,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
-      <li><a href="globals_defs.html"><span>Macros</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li class="current"><a href="#index_s"><span>s</span></a></li>
+      <li class="current"><a href="#index_v"><span>v</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -85,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,114 +96,141 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 &#160;
 
-<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>simband_io_circular_buffer_create()
-: <a class="el" href="simband-io_8h.html#afcc46abb8a59351577e071da4a19b7e4">simband-io.h</a>
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>vobio_buffer_create()
+: <a class="el" href="vobio_8h.html#a096cf8fecd8cf44eea0299831ee5fae4">vobio.h</a>
 </li>
-<li>simband_io_circular_buffer_create_with_existing_memory()
-: <a class="el" href="simband-io_8h.html#a56128a5996fb17d0f8adbc216e2f9989">simband-io.h</a>
+<li>vobio_buffer_create_with_existing_memory()
+: <a class="el" href="vobio_8h.html#aa280b93e8bdec24f2bbf910aec36baad">vobio.h</a>
 </li>
-<li>simband_io_circular_buffer_destroy()
-: <a class="el" href="simband-io_8h.html#a02c51708a1f3e54be718a690607af775">simband-io.h</a>
+<li>vobio_buffer_destroy()
+: <a class="el" href="vobio_8h.html#a846c1c41444f018cd11c6e6f6db2e1e7">vobio.h</a>
 </li>
-<li>simband_io_circular_buffer_sample_get()
-: <a class="el" href="simband-io_8h.html#a0195ea464ea5907e58b31c50d408736c">simband-io.h</a>
+<li>vobio_buffer_get_data_pointer()
+: <a class="el" href="vobio_8h.html#ad94c0bc661cbe7986295b6a1ddb62f2e">vobio.h</a>
 </li>
-<li>simband_io_circular_buffer_start_time_get()
-: <a class="el" href="simband-io_8h.html#afe821f9b783a8fd605b38e412b3918e2">simband-io.h</a>
+<li>vobio_buffer_get_external_memory_size()
+: <a class="el" href="vobio_8h.html#a5b55c15424456905d1837dc401c6f42d">vobio.h</a>
 </li>
-<li>simband_io_circular_buffer_update_to()
-: <a class="el" href="simband-io_8h.html#acb4362cf8ab2c47246f194ab474d99fc">simband-io.h</a>
+<li>vobio_buffer_get_sample_count()
+: <a class="el" href="vobio_8h.html#ab88f5e75be8f1876d79d4501444d6e6c">vobio.h</a>
 </li>
-<li>simband_io_context_close()
-: <a class="el" href="simband-io_8h.html#ae9a8cc616b529ed588a16147258cc061">simband-io.h</a>
+<li>vobio_buffer_reset()
+: <a class="el" href="vobio_8h.html#a86304334e1b0591cd123c82610dcf6a7">vobio.h</a>
 </li>
-<li>simband_io_context_open()
-: <a class="el" href="simband-io_8h.html#aae7d57b74f3221acb3370276bf7de6b5">simband-io.h</a>
+<li>vobio_buffer_sample_get()
+: <a class="el" href="vobio_8h.html#a0b75ee9f23d9e38a6a8a8614ea9fe2b2">vobio.h</a>
 </li>
-<li>simband_io_get_current_time()
-: <a class="el" href="simband-io_8h.html#a12d3b49c5ef1ac68ae20c2af60dcce51">simband-io.h</a>
+<li>vobio_buffer_start_time_get()
+: <a class="el" href="vobio_8h.html#a0cf405ad14b28491369077c34d48ca41">vobio.h</a>
 </li>
-<li>simband_io_get_samples()
-: <a class="el" href="simband-io_8h.html#a8490f8d4416de9c40f78e19700e41dcb">simband-io.h</a>
+<li>vobio_buffer_update_to()
+: <a class="el" href="vobio_8h.html#a334c763e0697674fd39e872e20816132">vobio.h</a>
 </li>
-<li>simband_io_get_timestamps()
-: <a class="el" href="simband-io_8h.html#a8db864ae96e6b120554f208752b151ac">simband-io.h</a>
+<li>vobio_clock_add_stream()
+: <a class="el" href="vobio_8h.html#a4672dcbfb7065bc58df179e0e88bd966">vobio.h</a>
 </li>
-<li>simband_io_initialize()
-: <a class="el" href="simband-io_8h.html#ace16acbf1a8d3ff68c5c2a44e96448db">simband-io.h</a>
+<li>vobio_clock_create()
+: <a class="el" href="vobio_8h.html#a6fbe03b6f16f6dd6fc4672bcff74f220">vobio.h</a>
 </li>
-<li>simband_io_is_active()
-: <a class="el" href="simband-io_8h.html#a791b570c6fc442d44fad60b4b80ba741">simband-io.h</a>
+<li>vobio_clock_create_receiver()
+: <a class="el" href="vobio_8h.html#a940011c09ac06cf84351e1f804d7a7e3">vobio.h</a>
 </li>
-<li>simband_io_run()
-: <a class="el" href="simband-io_8h.html#a3243826e13d09b0704ab020a663fc98b">simband-io.h</a>
+<li>vobio_clock_destroy()
+: <a class="el" href="vobio_8h.html#af75e6826b3afcf1756c6fe8e493a0f27">vobio.h</a>
 </li>
-<li>simband_io_send()
-: <a class="el" href="simband-io_8h.html#a3cded131b8f68e7331ade44fc7f6d00c">simband-io.h</a>
+<li>vobio_clock_destroy_receiver()
+: <a class="el" href="vobio_8h.html#a7e3dbca3fd86c2d32e182da73f179dc0">vobio.h</a>
 </li>
-<li>simband_io_set_notification_cb()
-: <a class="el" href="simband-io_8h.html#a395a7b18bfc44d65925a55991b20e193">simband-io.h</a>
+<li>vobio_clock_remove_stream()
+: <a class="el" href="vobio_8h.html#acf361f29fe4618dad34d873ea888d44d">vobio.h</a>
 </li>
-<li>simband_io_set_receive_cb()
-: <a class="el" href="simband-io_8h.html#a13f5524c961ec389dcf5fba5e403ad42">simband-io.h</a>
+<li>vobio_clock_set_gap_reset_threshold()
+: <a class="el" href="vobio_8h.html#af65577efb3d5bc2b8f4f047dbac14458">vobio.h</a>
 </li>
-<li>simband_io_stop()
-: <a class="el" href="simband-io_8h.html#adc7344862b22ab6d5de48c4823745268">simband-io.h</a>
+<li>vobio_get_current_time()
+: <a class="el" href="vobio_8h.html#adbde3180bff3991b82fbf9a7b4daa173">vobio.h</a>
 </li>
-<li>simband_io_stream_description_get()
-: <a class="el" href="simband-io_8h.html#ac78b189af412e2d116873a21c69d0168">simband-io.h</a>
+<li>vobio_get_samples()
+: <a class="el" href="vobio_8h.html#af99c943deb2ccc1e77394c6d2753c849">vobio.h</a>
 </li>
-<li>simband_io_stream_get_all()
-: <a class="el" href="simband-io_8h.html#ad4fe61163c9e446072af7db7ed4c7b4f">simband-io.h</a>
+<li>vobio_get_samples_from()
+: <a class="el" href="vobio_8h.html#ae34e878e4943c941104b0946730c1458">vobio.h</a>
 </li>
-<li>simband_io_stream_get_all_by_type()
-: <a class="el" href="simband-io_8h.html#a39dbab21ff43324b803f960eafc57805">simband-io.h</a>
+<li>vobio_get_samples_to()
+: <a class="el" href="vobio_8h.html#a766e37866af744ef2bd8c16addcfdbcc">vobio.h</a>
 </li>
-<li>simband_io_stream_get_by_type_and_index()
-: <a class="el" href="simband-io_8h.html#a0a4c4412b5bf946830b871fa21c4b70b">simband-io.h</a>
+<li>vobio_get_timestamps()
+: <a class="el" href="vobio_8h.html#ae1119b9e4e6f0117339c6ad717462a5a">vobio.h</a>
 </li>
-<li>simband_io_stream_get_default_by_type()
-: <a class="el" href="simband-io_8h.html#ae5cddbc25e3fbd5fb0058834fe4389c4">simband-io.h</a>
+<li>vobio_initialize()
+: <a class="el" href="vobio_8h.html#a540a0279ff50ea0c57f7d6e9151fe025">vobio.h</a>
 </li>
-<li>simband_io_stream_get_enum_value_name()
-: <a class="el" href="simband-io_8h.html#ae5b2bfd5e4abe60f0845e5b159cadddc">simband-io.h</a>
+<li>vobio_is_active()
+: <a class="el" href="vobio_8h.html#a96a729fd3a1435d04a69a105a975e622">vobio.h</a>
 </li>
-<li>simband_io_stream_get_from_keyword()
-: <a class="el" href="simband-io_8h.html#a5f33063fed956d59f525adef121a8fb5">simband-io.h</a>
+<li>vobio_main()
+: <a class="el" href="vobio_8h.html#ae514de72a6c0644e07199c2b80032d92">vobio.h</a>
 </li>
-<li>simband_io_stream_index_get()
-: <a class="el" href="simband-io_8h.html#ae7167ea8d052788203d52fe4b8766c02">simband-io.h</a>
+<li>vobio_receiver_create()
+: <a class="el" href="vobio_8h.html#a41c3b80aeed6191fbb5794b7e33af9a9">vobio.h</a>
 </li>
-<li>simband_io_stream_keyword_get()
-: <a class="el" href="simband-io_8h.html#a1b599b0fefde69ded3b6a296b94860bf">simband-io.h</a>
+<li>vobio_receiver_destroy()
+: <a class="el" href="vobio_8h.html#a2094b7a2347c5d91914b786cf2118ef2">vobio.h</a>
 </li>
-<li>simband_io_stream_overlay_get()
-: <a class="el" href="simband-io_8h.html#acee93696144eb79e588deb7db1f5205f">simband-io.h</a>
+<li>vobio_run()
+: <a class="el" href="vobio_8h.html#adc8fa4ad49b8110039d4ad9c8ced2e6c">vobio.h</a>
 </li>
-<li>simband_io_stream_sample_rate_get()
-: <a class="el" href="simband-io_8h.html#a83a1499250b8470cfd5dfc398e84913f">simband-io.h</a>
+<li>vobio_send()
+: <a class="el" href="vobio_8h.html#adb2c7fbe8b8e4ba9fc9db2c7059c3ac4">vobio.h</a>
 </li>
-<li>simband_io_stream_type_get()
-: <a class="el" href="simband-io_8h.html#a473ae52d759863708c908d0b723dae41">simband-io.h</a>
+<li>vobio_stop()
+: <a class="el" href="vobio_8h.html#aa83e6ecc7b3f09acbacb7415badb2840">vobio.h</a>
 </li>
-<li>simband_io_timer_create()
-: <a class="el" href="simband-io_8h.html#a6f26ff876ea74163ce4e40ed9af28498">simband-io.h</a>
+<li>vobio_stream_category_get()
+: <a class="el" href="vobio_8h.html#a6636f22765b604b21272d362a64a2a87">vobio.h</a>
 </li>
-<li>simband_io_timer_destroy()
-: <a class="el" href="simband-io_8h.html#a1b7e16fdfb4e1ad85a6bd979c06f3f9e">simband-io.h</a>
+<li>vobio_stream_description_get()
+: <a class="el" href="vobio_8h.html#a33f2791ecd1f29e9805368e57ef57822">vobio.h</a>
 </li>
-<li>simband_io_timer_start()
-: <a class="el" href="simband-io_8h.html#afdc348dd0cf465da26fc2724798e26e3">simband-io.h</a>
+<li>vobio_stream_enum_value_name_get()
+: <a class="el" href="vobio_8h.html#a4a45aeb16f96eb3d03d33f01f46de474">vobio.h</a>
 </li>
-<li>simband_io_timer_stop()
-: <a class="el" href="simband-io_8h.html#a43c59fb0cdc35024ad7d910e7d4c9408">simband-io.h</a>
+<li>vobio_stream_get_all()
+: <a class="el" href="vobio_8h.html#a31df6946ebb6f4d4b7ef1b0084229301">vobio.h</a>
+</li>
+<li>vobio_stream_get_by_type()
+: <a class="el" href="vobio_8h.html#a8c3b198774c27ee19cbec0ad004e15f6">vobio.h</a>
+</li>
+<li>vobio_stream_get_from_keyword()
+: <a class="el" href="vobio_8h.html#a283db611357921296d47f14ccf454824">vobio.h</a>
+</li>
+<li>vobio_stream_keyword_get()
+: <a class="el" href="vobio_8h.html#a19586cfa6dbd027499a02f46532c24c5">vobio.h</a>
+</li>
+<li>vobio_stream_sample_rate_get()
+: <a class="el" href="vobio_8h.html#abfca84ead71ba2964459038fa2150ca1">vobio.h</a>
+</li>
+<li>vobio_stream_type_get()
+: <a class="el" href="vobio_8h.html#a1657e0125269996781a92946a11a0d65">vobio.h</a>
+</li>
+<li>vobio_timer_create()
+: <a class="el" href="vobio_8h.html#ac0f62aa97dfdd39c730c5ba589de5cae">vobio.h</a>
+</li>
+<li>vobio_timer_destroy()
+: <a class="el" href="vobio_8h.html#a564541e1e64188ba64fcd799d82cb33b">vobio.h</a>
+</li>
+<li>vobio_timer_start()
+: <a class="el" href="vobio_8h.html#a191c3841d16026b0e82610184994be76">vobio.h</a>
+</li>
+<li>vobio_timer_stop()
+: <a class="el" href="vobio_8h.html#a5609a9da65dcd09920ff363c90a8290e">vobio.h</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2014 13:35:49 for Simband Software by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 16:24:31 for Simband API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

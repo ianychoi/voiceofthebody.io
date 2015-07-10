@@ -78,5 +78,5 @@ The following characteristics may classify a stream:
 [5]: /sensor-module/sensor-module-documentation/simsense.html#bio-z "What is Bio-Z?"
 [6]: /sensor-module/sensor-module-documentation/simsense.html#gsr "What is GSR?"
 [7]: /sensor-module/sensor-module-documentation/simsense.html#skin-temperature "What is Skin temperature?"
-[8]:/simband/simband-documentation/semantics-of-simband/types-streams.html#stream-metadata "Meta data"
+[8]:/simband/simband-documentation/semantics-of-simband/types-streams/#stream-metadata "Meta data"
 [9]: /simband/simband-documentation/writing-algorithms-using-simband-api.html "Your first Simband algorithm"

@@ -7,6 +7,9 @@ title: Changelog
 
 Here we'll be posting regular updates about Simband and updates to the documentation.
 
+## July 10, 2015
+Updated [Simband APIs](/simband/simband-documentation/simband-api.html), [Algorithm tutorial](/simband/simband-documentation/writing-algorithms-using-simband-api.html) with new APIs, and supporting documentation explaining APIs.
+
 ## April 19, 2015
 Added [list of streams](/simband/simband-documentation/semantics-of-simband/types-streams/stream-list.html) available in Simband.
 

@@ -3,7 +3,6 @@ title: "Semantics of Simband data"
 nav:
   - 'types-streams'
   - 'accessing-data-from-stream'
-  - 'applications'
   - 'access-data-via-sami'
 ---
 
@@ -40,7 +39,7 @@ This diagram shows how data flows from the sensor module to Simband and how data
 
 The Simband component `simsensed` receives the data from the sensor module, normalizes and categorizes the data, and sends the data to the `datad`. 
 
-`simsensed` categorizes data into its [stream type](/simband/simband-documentation/semantics-of-simband/types-streams.html) and normalizes the timestamps to UNIX timestamps. 
+`simsensed` categorizes data into its [stream type][4] and normalizes the timestamps to UNIX timestamps. 
 
 `datad` stores the data into the database and makes the data available when requested by an algorithm or the Simband UI. `datad` is also connected to SAMI and uploads the stored data based on the availability of WiFi. In an ideal network environment, you will be able to see data flowing in and out of SAMI with a delay of a couple of seconds (this is mostly due to network latency). 
 
@@ -56,6 +55,6 @@ The power of this implementation is that each algorithm is the "owner if its fat
 [1]: /simband/simband-documentation/semantics-of-simband/applications.html#spotcheck "Spotcheck"
 [2]: /sensor-module/sensor-module-documentation/sensor-module-communication-protocol/ "Sensor module communication protocol"
 [3]: /simband/simband-documentation/operation-modes.html "Simband operation modes"
-[4]: /simband/simband-documentation/semantics-of-simband/types-streams.html "Types of streams"
+[4]: /simband/simband-documentation/semantics-of-simband/types-streams "Types of streams"
 [5]: /sensor-module/sensor-module-documentation/simsense.html "Simsense"
 [6]: /simband/simband-documentation/simband-api.html "Simband API"

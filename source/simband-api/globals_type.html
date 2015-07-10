@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Simband Software: File Members</title>
+<title>Simband API: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Simband Software
+   <div id="projectname">Simband API
    </div>
-   <div id="projectbrief">API documentation for Simband, for connecting to sensors and algorithms.</div>
+   <div id="projectbrief">Simband API documentation, for accessing data from sensors and algorithms.</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
-      <li><a href="globals_defs.html"><span>Macros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -80,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,35 +90,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="contents">
 &#160;<ul>
-<li>simband_io_circular_buffer_h
-: <a class="el" href="simband-io_8h.html#a86ea6ffa4eb67299924eea022c624d80">simband-io.h</a>
+<li>vobio_buffer_h
+: <a class="el" href="vobio_8h.html#acead858651bc078c12281af7ceed2c1d">vobio.h</a>
 </li>
-<li>simband_io_context_h
-: <a class="el" href="simband-io_8h.html#a4b0ac78b3de91b9bf75889aa6943fa34">simband-io.h</a>
+<li>vobio_clock_h
+: <a class="el" href="vobio_8h.html#a1e8c0ee1ec4787ee0d29bd6ceb66b493">vobio.h</a>
 </li>
-<li>simband_io_notification_cb
-: <a class="el" href="simband-io_8h.html#af17043917586c3d1b2b8bc0a4ff0197f">simband-io.h</a>
+<li>vobio_clock_receiver_h
+: <a class="el" href="vobio_8h.html#a408e6643a49bc3e7f0c4e4cbcecb16b3">vobio.h</a>
 </li>
-<li>simband_io_receive_cb
-: <a class="el" href="simband-io_8h.html#ad994f0f3e64150360f5229c4d5a8da56">simband-io.h</a>
+<li>vobio_main_cb
+: <a class="el" href="vobio_8h.html#ab5facc97716c1f9cf007f53e7d37ce96">vobio.h</a>
 </li>
-<li>simband_io_stream_category_e
-: <a class="el" href="simband-io_8h.html#a4be76f5cc0468b5f4d3fc486e16b4e55">simband-io.h</a>
+<li>vobio_receive_cb
+: <a class="el" href="vobio_8h.html#a29ddc9f8ff008b07e0ff01fcdaf657e9">vobio.h</a>
 </li>
-<li>simband_io_stream_id_h
-: <a class="el" href="simband-io_8h.html#a1335808782fb7bbea77db5eb65349691">simband-io.h</a>
+<li>vobio_receiver_h
+: <a class="el" href="vobio_8h.html#ad32fb0dba4f0145a14b4ff5d9ab442c6">vobio.h</a>
 </li>
-<li>simband_io_timer_cb
-: <a class="el" href="simband-io_8h.html#ad85f0864ecc110915ad19d6e2b6e01e4">simband-io.h</a>
+<li>vobio_stream_category_e
+: <a class="el" href="vobio_8h.html#a14d3ba7a8b5b642dd5b459ea27d934b7">vobio.h</a>
 </li>
-<li>simband_io_timer_h
-: <a class="el" href="simband-io_8h.html#ac77fa92f66b9dec8721f9b6383a0d2c4">simband-io.h</a>
+<li>vobio_stream_id_h
+: <a class="el" href="vobio_8h.html#a3715923eda4eef201aa18cf462c00a75">vobio.h</a>
+</li>
+<li>vobio_terminate_cb
+: <a class="el" href="vobio_8h.html#a3af4879d0bd46137c5fa107ba7072d26">vobio.h</a>
+</li>
+<li>vobio_timer_cb
+: <a class="el" href="vobio_8h.html#aedc71a95fdfc98efacf41d659663a102">vobio.h</a>
+</li>
+<li>vobio_timer_h
+: <a class="el" href="vobio_8h.html#a678e6af2257102be3838d541338c0bdd">vobio.h</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2014 13:35:49 for Simband Software by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 26 2015 16:24:31 for Simband API by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
