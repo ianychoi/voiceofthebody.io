@@ -45,53 +45,49 @@ Roll up your sleeves—it's time to dive into code and learn some cool stuff.
 
 For our tutorial, we will create a `hrvalgorithm.h` file where we declare the `HRVAlgorithm`{:.param} class.
 
-Since we want to get timestamps from the `HeartBeat` stream, crunch that information and write the new data into a new stream called `HeartRateVariability`, we will declare two stream IDs (`hb`{:.param} and `hrv`{:.param}) and associate each ID with its respective stream. We will also need `Clock` and `Timer` objects from the Vobio API to synchronize the streams and trigger callbacks when the synchronized data is available.
+Since we want to get timestamps from the `HeartBeat` stream, crunch that information and write the new data into a new stream called `HeartRateVariability`, we will declare two stream IDs (`hb`{:.param} and `hrv`{:.param}) and associate each ID with its respective stream. We will also need [`Clock`][9] and [`Timer`][11] objects from the Vobio API to synchronize the streams and trigger callbacks. We will also require an `UpdateInterval`{:.param}, which will be used to start timer notification with a given interval.
 
-These types are defined in [`vobio.hpp`][10], a C++11 wrapper with convenience functions for using the C APIs declared in [`vobio.h`][7]. Its lightweight classes and functions take away some of the pain of dealing with C-style functions and with constructing/destructing objects.
+Now lets define a function prototype that takes heart beats as input and calculates the HeartRateVariability. Let us call this function as `calculateHeartRateVariability`.
+
+Stream, Clock and Timer types are defined in [`vobio.hpp`][10], a C++11 wrapper with convenience functions for using the C APIs declared in [`vobio.h`][7]. Its lightweight classes and functions take away some of the pain of dealing with C-style functions and with constructing/destructing objects.
 
 
 ~~~c
 #include "vobio.hpp"
 
-namespace algo {
 class HRVAlgorithm
 {
 public:
-    HRVAlgorithm();
+    void init();
 
 private:
+  bool calculateHeartRateVariability(const std::vector<double>& beats, float& result);
+
   vobio::stream hb;
   vobio::stream hrv;
 
-  std::unique_ptr<vobio::clock> m_clock;
-  std::unique_ptr<vobio::timer> m_timer;
+  vobio::clock clock;
+  vobio::timer timer;
 
 };
-}
 ~~~
 
-Next, let's create a file called `hrvalgorithm.cpp` and start filling it step-by-step.
+Next, let's create a file called `hrvalgorithm.cpp`.
 
-We will include `hrvalgorithm.h`{:.param} (the header file we just created) and `HeartRateVariability.h`{:.param}, which contains the class `HeartRateVariability`{:.param}. This is the class that will take the collected `HeartBeats` and process them.
+We will include `hrvalgorithm.h`{:.param} (the header file we just created).
 
-We will define `Seconds`{:.param}, which will be used as valid time in the past; and we will define `UpdateInterval`{:.param}, which will be used to start timer notification with a given interval.
-
-So far, `hrvalgorithm.cpp` looks like this:
+So far, `hrvalgorithm.cpp` looks like this and let's start filling it step-by-step.
 
 ~~~c
 #include "hrvalgorithm.h"
-#include "HeartRateVariability/HeartRateVariability.h"
 
-static const int Seconds = algo::HeartRateVariability::RequiredTimePeriodSec;
 static const int UpdateInterval = 5;
 
-namespace algo {
-HRVAlgorithm::HRVAlgorithm()
+void HRVAlgorithm::init()
 {
 
 
 
-}
 }
 ~~~
 
@@ -99,97 +95,80 @@ Now, let's initialize the stream objects. We will use the constructor of [`vobio
 
 ~~~c
 #include "hrvalgorithm.h"
-#include "HeartRateVariability/HeartRateVariability.h"
 
-static const int Seconds = algo::HeartRateVariability::RequiredTimePeriodSec;
 static const int UpdateInterval = 5;
 
-namespace algo {
-HRVAlgorithm::HRVAlgorithm()
+HRVAlgorithm::init()
 {
-...
-    hb = vobio::stream(SIMBAND_STREAM_TYPE_HEART_BEAT);
-    hrv = vobio::stream(SIMBAND_STREAM_TYPE_HEART_RATE_VARIABILITY);
-...
+    hb = vobio::stream(SIMBAND("heartBeat"));
+    hrv = vobio::stream("com.my-adk-sample.myhrvstream");
 
-}
 }
 ~~~
 
+Note: All Simband system streams are available [here](/semantics-of-simband/types-streams/stream-list.html)
+
 Algorithms are time-driven. For a timer, you need a clock, and we define the clock based on the data we want to work on.
 
-We want to work on the `HeartBeat` (`hb`{:.param}) stream, and the stream needs to be time-synchronized in this algorithms context. [`vobio::clock`{:.param}][9] is the class that wraps `vobio_clock_h`. We will create an object of that class and store it in the `unique_ptr m_clock`{:.param} declared in `hrvalgorithm.h`.
-
-We will also assign the stored pointer that is pointing to the newly assigned object [`vobio::clock`{:.param}][9] to an auto type variable `clock`{:.param}.
+We want to work on the `HeartBeat` (`hb`{:.param}) stream, and this stream needs to be time-synchronized in this algorithms context. [`vobio::clock`{:.param}][9] is the class that wraps `vobio_clock_h`. We will create an object of that class and store it in the `clock`{:.param} declared in `hrvalgorithm.h`.
 
 To receive periodic callbacks, we will use a timer. To do that, let's create an object of the class [`vobio::timer`][11] that is a wrapper around `vobio_timer_h`{:.param}.
 
-The [`vobio::timer`{:.param}][11] constructor expects a pointer to an object of class [`vobio::clock`{:.param}][9] as a parameter and a callback with no parameters. We will create an object of [`vobio::timer`{:.param}][11] and store it in the `unique_ptr m_timer`{:.param} declared in `hrvalgorithm.h`.
+The [`vobio::timer`{:.param}][11] constructor expects a pointer to an object of class [`vobio::clock`{:.param}][9] as a parameter and a callback with no parameters. We will create an object of [`vobio::timer`{:.param}][11] and store it in the `timer`{:.param} declared in `hrvalgorithm.h`.
 
 In this example, as a callback we use C++11 [lambda][6].
 
 ~~~c
 #include "hrvalgorithm.h"
-#include "HeartRateVariability/HeartRateVariability.h"
 
-static const int Seconds = algo::HeartRateVariability::RequiredTimePeriodSec;
 static const int UpdateInterval = 5;
 
-namespace algo {
-HRVAlgorithm::HRVAlgorithm()
+HRVAlgorithm::init()
 {
-    hb = vobio::stream(SIMBAND_STREAM_TYPE_HEART_BEAT);
-    hrv = vobio::stream(SIMBAND_STREAM_TYPE_HEART_RATE_VARIABILITY);
+    hb = vobio::stream(SIMBAND("heartBeat"));
+    hrv = vobio::stream("com.my-adk-sample.myhrvstream");
 
-    m_clock = new vobio::clock(hb.stream());
-    auto clock = m_clock.get();
-...
-    m_timer = new vobio::timer(*clock, [this, hb, hrv] {
+    clock = vobio::clock(hb);
+
+    timer = vobio::timer(clock, [&] {
         ...
         ...
     });
 ...
-}
 }
 
 ~~~
 
-We will receive a callback when all the streams in the context have data equivalent to the timeout.
+We will receive a callback when all the streams in the context have data equivalent to the timeout. For this example, we are working with only one stream.
 
-First, we have to start the timer. We will call the function `start`{:.param} of the [`simband::timer`{:.param}][11] class, which is a wrapper for  [`vobio_timer_start`][15]. It expects a timeout interval in milliseconds.
+First, we have to start the timer. We will call the function `start`{:.param} of the [`vobio::timer`{:.param}][11] class, which is a wrapper for  [`vobio_timer_start`][15]. It expects a timeout interval in milliseconds.
 
 ~~~c
 #include "hrvalgorithm.h"
-#include "HeartRateVariability/HeartRateVariability.h"
 
-static const int Seconds = algo::HeartRateVariability::RequiredTimePeriodSec;
 static const int UpdateInterval = 5;
 
-namespace algo {
-HRVAlgorithm::HRVAlgorithm()
+HRVAlgorithm::init()
 {
-    hb = vobio::stream(SIMBAND_STREAM_TYPE_HEART_BEAT);
-    hrv = vobio::stream(SIMBAND_STREAM_TYPE_HEART_RATE_VARIABILITY);
+    hb = vobio::stream(SIMBAND("heartBeat"));
+    hrv = vobio::stream("com.my-adk-sample.myhrvstream");
 
-    m_clock = new vobio::clock(hb.stream());
-    auto clock = m_clock.get();
-...
-    m_timer = new vobio::timer(*clock, [this, hb, hrv] {
-        ...
-        ...
-    });
-...
-    m_timer->start(UpdateInterval * 1000);
-...
-}
+  clock = vobio::clock(hb);
+
+  timer = vobio::timer(clock, [&] {
+      ...
+      ...
+  });
+
+  timer.start(UpdateInterval);
 }
 ~~~
 
 When we get the callback, all the code inside the [lambda][6] function will execute.
 
-Since we now have the data available in the `hb`{:.param} stream, we should use the API [`vobio_get_timestamps()`{:.param}][13] to get the timestamps of where-there-is-a-heartbeat and send this data to calculate `HeartRateVariability`.
+Since we now have the data available in the `hb`{:.param} stream, we should use the API [`vobio::get_samples()`{:.param}][21] to get the data & timestamps of where-there-is-a-heartbeat and use this information to calculate `HeartRateVariability`.
 
-To get data from the stream, [`vobio_get_timestamps()`{:.param}][13] API expects the lower and upper bounds of the time period. The upper bound of the time period is basically "Now = t<sub>1</sub>" to some valid time in past "Now - `Seconds`".
+To get data from the stream, [`vobio::get_samples()`{:.param}][21] API expects the lower and upper bounds of the time period. The upper bound of the time period is basically "Now = t<sub>1</sub>" to some valid time in past "Now - `Seconds`".
 
 To get the current time in the context's clock, we will call the function `now()`{:.param} of [`vobio::clock`{:.param}][9] class, which is a wrapper for  [`vobio_get_current_time()`][16].
 
@@ -197,27 +176,25 @@ To get the current time in the context's clock, we will call the function `now()
 auto now = clock->now();
 ~~~
 
-[`vobio_get_timestamps()`{:.param}][13] API on success will hold `timestamps`, which are of type `double**`; and will hold the size of the timestamps list as `count`, which are of type `int*`.
+[`vobio::get_samples()`{:.param}][21] API on success will return a vector containing samples of type [`vobio_sample_s`][20], which holds data and timestamp variables. [`vobio_sample_s`][20] structure is defined in [`vobio.h`][17].
 
 We will use a `vector`{:.param} of type `double`{:.param} to save the retrieved timestamps, as it is advisable to free the list.
 
 The following code snippet demonstrates as explained.
 
 ~~~c
-    m_timer = new vobio::timer(*clock, [this, hb, hrv] {
+      timer = vobio::timer(clock, [&] {
         ...
         auto now = clock.now();
-        std::vector<vobio_sample_s> samples = vobio::get_samples(hb, now - Seconds, now);
+        std::vector<vobio_sample_s> samples = vobio::get_samples(hb, now - UpdateInterval, now);
 
         std::vector<double> beats;
         for (auto i = 0; i < samples.size(); ++i)
             beats.push_back(samples[i].timestamp);
 
-        HeartRateVariability::Result result;
-        if (HeartRateVariability::Calculate(beats.data(), beats.size(), result)) {
-            float value = 100 * result.m_SDNN;
-            if (value < 100)
-                vobio::send(hrv, now, value);
+        float result(0);
+        if (calculateHeartRateVariability(beats, result)) {
+            vobio::send(hrv, now, result);
         }
         ...
     });
@@ -234,51 +211,69 @@ Below is the complete code for `hrvalgorithm.cpp`.
 
 ~~~c
 #include "hrvalgorithm.h"
-#include "HeartRateVariability/HeartRateVariability.h"
-#include <logging.h>
 
-static const int Seconds = algo::HeartRateVariability::RequiredTimePeriodSec;
 static const int UpdateInterval = 5;
 
-namespace algo {
-HRVAlgorithm::HRVAlgorithm()
+void HRVAlgorithm::init()
 {
+    hb = vobio::stream(SIMBAND("heartBeat"));
+    hrv = vobio::stream("com.my-adk-sample.myhrvstream");
 
-  hb = vobio::stream(SIMBAND_STREAM_TYPE_HEART_BEAT);
-  hrv = vobio::stream(SIMBAND_STREAM_TYPE_HEART_RATE_VARIABILITY);
+    clock = vobio::clock(hb);
 
-  m_clock = new vobio::clock(hb.stream());
-  auto clock = m_clock.get();
+    timer = vobio::timer(clock, [&] {
+        auto now = clock.now();
 
-  mtimer = new vobio::timer(*clock, [this, hb, hrv] {
-      auto now = clock.now();
-      std::vector<vobio_sample_s> samples = vobio::get_samples(hb, now - Seconds, now);
 
-      std::vector<double> beats;
-      for (auto i = 0; i < samples.size(); ++i)
-          beats.push_back(samples[i].timestamp);
+        std::vector<vobio_sample_s> samples = vobio::get_samples(hb, now - UpdateInterval, now);
 
-      HeartRateVariability::Result result;
-      if (HeartRateVariability::Calculate(beats.data(), beats.size(), result)) {
-          float value = 100 * result.m_SDNN;
-          if (value < 100)
-              vobio::send(hrv, now, value);
-      }
-  });
+        std::vector<double> beats;
+        for (auto i = 0; i < samples.size(); ++i)
+            beats.push_back(samples[i].timestamp);
 
-  timer->start(UpdateInterval * 1000);
+        float result(0);
+        if (calculateHeartRateVariability(beats, result)) {
+            vobio::send(hrv, now, result);
+        }
+    });
 
+    timer.start(UpdateInterval);
+}
+
+~~~
+
+Now, lets add the function that holds the computation of HRV from the obtained beats.
+
+~~~c
+
+bool HRVAlgorithm::calculateHeartRateVariability(const std::vector<double>& beats, float& result)
+{
+    result = 0;
+    return true;
+}
+
+~~~
+
+Finally, the last step is to add the main function. Here, we will call the `vobio_main` function by passing a function
+
+~~~c
+
+int main(int argc, char** argv) {
+    HRVAlgorithm algo;
+
+    return vobio_main(argc, argv, [] (void* userData) {
+        HRVAlgorithm* algo = (HRVAlgorithm*)userData;
+        algo->init();
+    } , &algo);
 }
 
 ~~~
 
 
-
-
 [1]: /simband/simband-documentation/semantics-of-simband/index.html "Semantics of Simband data"
 [2]: /simband/simband-documentation/semantics-of-simband/accessing-data-from-stream.html "Accessing data"
 [3]: /simband/simband-documentation/semantics-of-simband/index.html#what-is-a-stream "What is a stream?"
-[4]: /simband/simband-documentation/semantics-of-simband/types-streams "Examples of streams"
+[4]: /simband/simband-documentation/semantics-of-simband/types-streams/stream-list.html "Examples of streams"
 [5]: /simband/simband-documentation/semantics-of-simband/accessing-data-from-stream.html#circular-buffers "Buffers"
 [6]: http://www.cprogramming.com/c++11/c++11-lambda-closures.html "C++ Lambda Function"
 [7]: /simband-api/vobio_8h_source.html "vobio.h"
@@ -292,4 +287,6 @@ HRVAlgorithm::HRVAlgorithm()
 [16]: /simband-api/vobio_8h.html#adbde3180bff3991b82fbf9a7b4daa173 "vobio_get_current_time()"
 [17]: /simband-api/vobio_8h.html#adb2c7fbe8b8e4ba9fc9db2c7059c3ac4 "vobio_send()"
 [18]: /simband/simband-documentation/simband-api.html "Vobio API"
-[19]:/simband-api/simband-io_8h.html#a0195ea464ea5907e58b31c50d408736c "vobio_circular_buffer_sample_get"
+[19]: /simband-api/simband-io_8h.html#a0195ea464ea5907e58b31c50d408736c "vobio_circular_buffer_sample_get"
+[20]: /simband-api/structvobio__sample__s.html "vobio_sample_s"
+[21]: /simband-api/vobio_8hpp.html "vobio::get_samples"
