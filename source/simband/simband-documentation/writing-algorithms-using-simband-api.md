@@ -33,13 +33,6 @@ Blue cells represent a `HeartBeat`, and white cells represent no `HeartBeat`, in
 
 As shown in the above diagram, we are requesting information from "Now = t<sub>1</sub>" to a valid time in the past "t<sub>0</sub>". The API will retrieve a list of `timestamps` where-there-is data and a total `count` of timestamps.
 
-Three primary APIs are used to read data from existing streams:
-
-[`vobio_get_samples()`][12] gets the numerical "data" from the stream.
-[`vobio_get_timestamps()`][13] gets the "timestamps" of the occurred-events in the stream.
-
-For this tutorial, since we are *only* interested in "occurrence of the event", we will use [`vobio_get_timestamps()`][13] to extract the information from the `HeartBeat` stream.
-
 ###Tutorial
 Roll up your sleeves—it's time to dive into code and learn some cool stuff.
 
