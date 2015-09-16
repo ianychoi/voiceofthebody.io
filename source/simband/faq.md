@@ -38,7 +38,7 @@ What are the different blinking patterns of Simband charger?
 </div>
 
 How many PPG channels are available on Simband? Which wavelengths are associated with each channel?
-: Simband has 6 LEDs and 5 photodiodes, which enables Simband to generate 30 PPG channels. Simband currently exposes 7 channels through its APIs, which cover all the wavelengths from different PPG locations. We think these channels provide the best-quality signals.
+: Simband has 6 LEDs and 5 photodiodes, which enables Simband to generate 30 PPG channels. Simband currently exposes 8 channels through its APIs, which cover all the wavelengths from different PPG locations. We think these channels provide the best-quality signals.
 
 :|**Channel name**|**LED color**|**Wavelength(nm)**|
 |----------------|-------------|------------------|
