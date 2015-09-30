@@ -1,7 +1,32 @@
 require 'rack/cors'
+require 'rack/rewrite'
 
 # Modified version of TryStatic, from rack-contrib
 # https://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/try_static.rb
+
+use Rack::Rewrite do
+  r301   %r(\/sensor\-module\/sensor-module\-changelog\.html$),  'https://www.simband.io/'
+  r301   %r(\/simband\/simband\-changelog\.html$),  'https://www.simband.io/'
+  r301   %r(\/simband\/development-kits\.html$),  'https://www.simband.io/'
+  r301   %r(\/simband\/simband\-documentation\/simband\-source\-code\.html),  'https://www.simband.io/documentation/simband-documentation/'
+  r301   %r(\/simband\/simband\-documentation\/simband\-adk\.html),  'https://www.simband.io/pages/simband-adk'
+  r301   %r(\/sensor\-module\/schematics),  'https://www.simband.io/'
+  r301   %r(\/privacy$),  'https://www.simband.io/documentation/about/privacy.html'
+  r301   %r(\/simband\/faq\.html$),  'https://www.simband.io/documentation/faq.html'
+  r301   %r(\/simband\/news\.html$),  'https://www.simband.io/'
+  r301   %r(\/simband$),  'https://www.simband.io/documentation/simband-documentation/'
+  r301   %r(\/simband\/$),  'https://www.simband.io/documentation/simband-documentation/'
+  r301   %r(\/simband\/(.*)),  'https://www.simband.io/documentation/$1'
+  r301   %r(\/sensor\-module\/$),  'https://www.simband.io/documentation/sensor-module-documentation/'
+  r301   %r(\/sensor\-module$),  'https://www.simband.io/documentation/sensor-module-documentation/'
+  r301   %r(\/sensor\-module\/(.*)),  'https://www.simband.io/documentation/$1'
+  r301   %r(\/bioinformatics$),  'https://www.simband.io/bioinformatics/'
+  r301   %r(\/bioinformatics\/(.*)),  'https://www.simband.io/bioinformatics/$1'
+  r301   %r(\/community$),  'https://www.simband.io/'
+  r301   %r(\/community\/(.*)),  'https://www.simband.io/$1'
+  r301   %r(\/about\/(.*)),  'https://www.simband.io/documentation/about/$1'
+  r301   %r(.*),  'https://www.simband.io/'
+end
 
 use Rack::Cors do
   allow do
