@@ -23,7 +23,7 @@ use Rack::Rewrite do
   r301   %r(\/bioinformatics$),  'https://www.simband.io/bioinformatics/'
   r301   %r(\/bioinformatics\/(.*)),  'https://www.simband.io/bioinformatics/$1'
   r301   %r(\/community$),  'https://www.simband.io/'
-  r301   %r(\/community\/(.*)),  'https://www.simband.io/$1'
+  r301   %r(\/community\/(.*)),  'https://www.simband.io/'
   r301   %r(\/about\/(.*)),  'https://www.simband.io/documentation/about/$1'
   r301   %r(.*),  'https://www.simband.io/'
 end
